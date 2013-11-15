@@ -4,9 +4,6 @@ using System.Collections;
 //This line should always be present at the top of scripts which use pathfinding
 using Pathfinding;
 public class AstarAI : MonoBehaviour {
-	// Blind enemy object used to access script
-	//public BlindEnemy blindEnemyAI;
-	
     //The point to move to
     public Vector3 targetPosition;
     
@@ -20,23 +17,39 @@ public class AstarAI : MonoBehaviour {
     public float speed = 100;
     
     //The max distance from the AI to a waypoint for it to continue to the next waypoint
-    public float nextWaypointDistance = 100;
+    public float nextWaypointDistance = 3;
  
     //The waypoint we are currently moving towards
     private int currentWaypoint = 0;
+	
+	public BlindEnemy blindEnemyAI;
  
     public void Start () {
-		//blindEnemyAI = GetComponent<BlindEnemy>();
-		//targetPosition = blindEnemyAI.targetPosition;
-		
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
+		blindEnemyAI = GetComponent<BlindEnemy>();
         
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
-        //seeker.StartPath (transform.position,targetPosition, OnPathComplete);
+        seeker.StartPath (transform.position,targetPosition, OnPathComplete);
+		
+		seeker.pathCallback += OnPathComplete;
+		// Invoke seekeing every 3 seconds
+		InvokeRepeating("TriggerSeeker", 3, 3);
     }
     
+	public void TriggerSeeker(){
+		// Get the current target
+		targetPosition = blindEnemyAI.targetPosition;
+		
+		//Start a new path to the targetPosition, return the result to the OnPathComplete function
+        seeker.StartPath (transform.position, targetPosition, OnPathComplete);
+	}
+	
     public void OnPathComplete (Path p) {
+		if (p.GetTotalLength() < 10000){
+			Debug.Log("Play scury music");
+		}
+		
         Debug.Log ("Yey, we got a path back. Did it have an error? "+p.error);
         if (!p.error) {
             path = p;
@@ -44,12 +57,6 @@ public class AstarAI : MonoBehaviour {
             currentWaypoint = 0;
         }
     }
-	
-	// Update is called once per frame
-	void Update(){
-        // Update the target based on AI's detection
-		//targetPosition = blindEnemyAI.targetPosition;
-	}
 	
 	public void SetSeeker(Vector3 targetPos){
 		seeker = GetComponent<Seeker>();

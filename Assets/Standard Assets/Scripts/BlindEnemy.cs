@@ -12,16 +12,12 @@ public class BlindEnemy : MonoBehaviour {
 	// Has this agent detected the player at all?
 	public bool detected;
 	
-	public AstarAI aStarAIObj;
-	
 	// Use this for initialization
 	void Start () {
 		playerCharacter = GameObject.Find("Player");
 		playerNoise = playerCharacter.GetComponent<PlayerNoise>();
 		// Default target position
 		targetPosition = playerCharacter.transform.position;
-		aStarAIObj = GetComponent<AstarAI>();
-		aStarAIObj.SendMessage("SetSeeker", targetPosition);
 	}
 	
 	// Update is called once per frame
@@ -32,7 +28,6 @@ public class BlindEnemy : MonoBehaviour {
 	// Calculate the distance between this enemy and the player
 	Vector3 DistToPlayer(){
 		return gameObject.transform.position - playerCharacter.transform.position;
-		
 	}
 	
 	// Calculate when the enemy should detect player based on noise
@@ -45,7 +40,6 @@ public class BlindEnemy : MonoBehaviour {
 				detected = true;
 				// Invoke basic pathing in some random direction
 				targetPosition = new Vector3(Random.Range(-100, 500), 1.05f, Random.Range(-300, 300));
-				aStarAIObj.SendMessage("SetSeeker", targetPosition);
 				
 			// If the noise level is over 40, trigger seeking for player
 			}else if(playerNoise.noiseLevel > 40 && detected == true){
@@ -55,13 +49,11 @@ public class BlindEnemy : MonoBehaviour {
 				targetPosition =  new Vector3(playerCharacter.transform.position.x + Random.Range(-10, 10),
 					                          playerCharacter.transform.position.y,
 					                          playerCharacter.transform.position.z + Random.Range(1, 10));
-				aStarAIObj.SendMessage("SetSeeker", targetPosition);
 			
 			// If the noise level is over 70, enemy will know where player is
 			}else if(playerNoise.noiseLevel > 70 && detected == true){
 				// Head straight for the player
 				targetPosition = playerCharacter.transform.position;
-				aStarAIObj.SendMessage("SetSeeker", targetPosition);
 			}
 		}
 	}
