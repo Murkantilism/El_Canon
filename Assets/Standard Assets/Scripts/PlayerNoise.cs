@@ -30,7 +30,7 @@ public class PlayerNoise : MonoBehaviour {
 		// If the player's velocity isn't a zero vector (AKA player is moving)
 		if (!(playerCharacter.velocity == new Vector3(0, 0, 0))){
 			
-			// If the player isn't holding down the shift key, set the noise level to
+			// If the player isn't holding down either shift key, set the noise level to
 			// 30 and add the noise level of triggered areas (if applicable).
 			if (! (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))){
 				noiseLevel = 30 + waterNoise + leavesNoise + grassNoise;

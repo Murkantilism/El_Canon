@@ -33,7 +33,7 @@ public class BlindEnemy : MonoBehaviour {
 	// Calculate when the enemy should detect player based on noise
 	void NoiseDetection(){
 		// If the enemy is less than 20 units away from player in any direction
-		if (DistToPlayer().x < 100 || DistToPlayer().y < 100 || DistToPlayer().z < 100){
+		if (DistToPlayer().x < 20 || DistToPlayer().y < 20  || DistToPlayer().z < 20){
 			// If the noise level is over 20 and the agent hasn't already detected
 			// anything, trigger basic awareness of enemy
 			if (playerNoise.noiseLevel > 20 && detected == false){
@@ -53,6 +53,15 @@ public class BlindEnemy : MonoBehaviour {
 			// If the noise level is over 70, enemy will know where player is
 			}else if(playerNoise.noiseLevel > 70 && detected == true){
 				// Head straight for the player
+				targetPosition = playerCharacter.transform.position;
+			}
+		}
+		
+		// If the player is less than 5 feet away, incease noise sensitivity
+		if (DistToPlayer().x < 5 || DistToPlayer().y < 5  || DistToPlayer().z < 5){
+			// If the noise level is over 5, the agent will know the 
+			// player's postion right away.
+			if (playerNoise.noiseLevel > 5 && detected == false){
 				targetPosition = playerCharacter.transform.position;
 			}
 		}

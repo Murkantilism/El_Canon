@@ -34,7 +34,7 @@ public class AstarAI : MonoBehaviour {
 		
 		seeker.pathCallback += OnPathComplete;
 		// Invoke seekeing every 3 seconds
-		InvokeRepeating("TriggerSeeker", 3, 3);
+		InvokeRepeating("TriggerSeeker", 3, 1);
     }
     
 	public void TriggerSeeker(){

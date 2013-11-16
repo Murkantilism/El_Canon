@@ -336,7 +336,7 @@ function Update () {
 		UpdateFunction();
 }
 
-private function ApplyInputVelocityChange (velocity : Vector3) {	
+private function ApplyInputVelocityChange (velocity : Vector3) {
 	if (!canControl)
 		inputMoveDirection = Vector3.zero;
 	
