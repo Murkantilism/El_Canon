@@ -1,0 +1,69 @@
+[33mcommit 2b53ac610ef558c2490153bd68e012954b4f26fb[m
+Author: Deniz Ozkaynak <deniz.ozkaynak@gmail.com>
+Date:   Sun Nov 17 14:00:56 2013 -0500
+
+    Overwriting Jeff's changes
+
+[33mcommit 6e7e70bb54e1e1227cdef9f16504247076f3331f[m
+Merge: 104d97d da65c28
+Author: Deniz Ozkaynak <deniz.ozkaynak@gmail.com>
+Date:   Sun Nov 17 13:33:52 2013 -0500
+
+    Added player death, impairment stacks
+
+[33mcommit 104d97d38bb84aa9aeade121693aede3b42e7a56[m
+Author: Deniz Ozkaynak <deniz.ozkaynak@gmail.com>
+Date:   Sun Nov 17 13:33:10 2013 -0500
+
+    Player death, impairment stacks
+
+[33mcommit da65c28994bcd34c89032951f105f17e898516fd[m
+Author: jsf62592 <jsf62592@comcast.net>
+Date:   Sun Nov 17 13:20:22 2013 -0500
+
+    Terrain update
+
+[33mcommit 273a8fda278859618be8e24b257459fadc7face1[m
+Author: Deniz Ozkaynak <deniz.ozkaynak@gmail.com>
+Date:   Sat Nov 16 17:16:47 2013 -0500
+
+    Added player crouching, improved AI
+    
+    -Player holding either Shift button now slows movement
+    -Blind AI now detects player right away if the player is less than 5
+    feet & generating any noise
+
+[33mcommit d45ccadf51142d71f5d23fba8014815c9d2919c9[m
+Author: Deniz Ozkaynak <deniz.ozkaynak@gmail.com>
+Date:   Thu Nov 14 19:09:38 2013 -0500
+
+    A* AI working
+    
+    A* pathfinding works properly now, chases player.
+    
+    Need to fix up BlindEnemy.cs so it chases player "more correctly".
+
+[33mcommit 5facf270e3965d689e4122e6422ef32536e038ec[m
+Author: Deniz Ozkaynak <deniz.ozkaynak@gmail.com>
+Date:   Thu Nov 14 14:39:01 2013 -0500
+
+    Flattened terrain, working on AI
+    
+    -Flattened bottom of canyon, uneven terrain was messing with A*
+    Pathfinding.
+    
+    -AI not yet completely functional
+
+[33mcommit ba95ae63b95bf3f38f32be5dc23ebcece436ca06[m
+Author: Deniz Ozkaynak <deniz.ozkaynak@gmail.com>
+Date:   Fri Nov 8 14:32:17 2013 -0500
+
+    Initial Commit of unzipped Unity3D project
+    
+    Attempting to commit with Unity enabled for source control
+
+[33mcommit 8bca5fc8aea5a2816f371e3d62c420d021eddabc[m
+Author: Deniz Ozkaynak <deniz.ozkaynak@gmail.com>
+Date:   Fri Nov 8 11:27:59 2013 -0800
+
+    Initial commit
