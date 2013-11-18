@@ -72,6 +72,7 @@
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\Plugins\AstarPathfindingProject\ExampleScenes\Materials\Projector Light.shader" />
      <None Include="Assets\Plugins\AstarPathfindingProject\Readme.txt" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Alpha-Toon-Shader.shader" />
      <None Include="Assets\Plugins\AstarPathfindingProject\Plugins\JsonFx\License.txt" />
      <None Include="Assets\Plugins\AstarPathfindingProject\Plugins\JsonFx\Readme.txt" />
      <None Include="Assets\Plugins\AstarPathfindingProject\link.xml" />

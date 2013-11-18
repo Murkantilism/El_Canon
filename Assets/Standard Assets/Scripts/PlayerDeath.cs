@@ -30,7 +30,6 @@ public class PlayerDeath : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		EndGame();
-		Debug.Log(blindStacks);
 	}
 	
 	// If the player collides with an AI agent, add a stack of impairment
