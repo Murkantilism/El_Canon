@@ -6,12 +6,12 @@ Shader "Hidden/TerrainEngine/Splatmap/Lightmap-FirstPass" {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_Ramp ("Toon Ramp (RGB)", 2D) = "gray" {} 
 	}
-
+	
 	SubShader {
 		Tags { "RenderType"="Opaque" }
 		UsePass "Toon/Lighted/FORWARD"
 		UsePass "Toon/Basic Outline/OUTLINE"
-	} 
+	}
 	
 	Fallback "Toon/Lighted"
 }
