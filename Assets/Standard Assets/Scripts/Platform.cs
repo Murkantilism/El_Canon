@@ -18,7 +18,11 @@ public class Platform : MonoBehaviour {
 		if(ActivatePlatform.shouldMove)
 		{
 			if(transform.position == destination.position)
+			{
+				
 				back = true;
+				
+			}
 			if(transform.position == origin.position)
 				back = false;
 			if(back)
