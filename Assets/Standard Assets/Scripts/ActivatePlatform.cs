@@ -13,13 +13,17 @@ public class ActivatePlatform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetButtonUp("Fire1"))
+			{
+				shouldMove = true;
+			}
 	}
 	
 	void OnTriggerEnter(Collider col)
 	{
 		if(col.gameObject.tag == "Player")
 		{
-			switchHint.SendMessage("ShowHint", "Press Shift to activate the platform");
+			switchHint.SendMessage("ShowHint", "Press Control to activate the platform");
 		}
 	}
 }

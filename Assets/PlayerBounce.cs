@@ -18,7 +18,7 @@ public class PlayerBounce : MonoBehaviour {
 	
 	void Jump()
 	{
-		playerMotor.SetVelocity(new Vector3(0,60,0));	
+		playerMotor.SetVelocity(new Vector3(0,40,0));	
 	}
 	
 	void OnTriggerEnter(Collider col)
