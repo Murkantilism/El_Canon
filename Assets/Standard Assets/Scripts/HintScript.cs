@@ -15,7 +15,7 @@ public class HintScript : MonoBehaviour {
 		{
 			timer += Time.deltaTime;
 			
-			if(timer >= 2)
+			if(timer >= 5)
 			{
 				guiText.enabled = false;
 				timer = 0.0f;

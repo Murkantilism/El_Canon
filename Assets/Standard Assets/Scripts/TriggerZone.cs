@@ -19,8 +19,7 @@ public class TriggerZone : MonoBehaviour {
 			{
 				col.gameObject.SendMessage("Jump");
 				Destroy(GameObject.FindWithTag("LightSource"));
-			} else hint.SendMessage("ShowHint", "This looks like it can be jumped on to reach the " +
-				"next level, but it needs a light source to open up");
+			} else hint.SendMessage("ShowHint", "This flower looks like it can be jumped on to reach the next level, but it needs a light source to activate.");
 		}
 	}
 }
