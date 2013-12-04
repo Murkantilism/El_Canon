@@ -49,12 +49,12 @@ public class PlayerNoise : MonoBehaviour {
 	void OnTriggerEnter(Collider col){
 		// If the player is moving through water, add 40 to the noise level
 		if (col.gameObject.tag == "Water"){
-			waterNoise = 40;
+			waterNoise = 50;
 		}
 		
 		// If the player is moving through leaves, add 30 to the noise level
 		if (col.gameObject.tag == "Leaves"){
-			leavesNoise = 30;
+			leavesNoise = 40;
 		}
 		
 		// If the player is walking through soft grass, decrease 10 from the noise level

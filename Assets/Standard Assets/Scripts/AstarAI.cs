@@ -14,7 +14,7 @@ public class AstarAI : MonoBehaviour {
     public Path path;
     
     //The AI's speed per second
-    public float speed = 100;
+    public float speed = 250;
     
     //The max distance from the AI to a waypoint for it to continue to the next waypoint
     public float nextWaypointDistance = 3;
@@ -45,12 +45,8 @@ public class AstarAI : MonoBehaviour {
         seeker.StartPath (transform.position, targetPosition, OnPathComplete);
 	}
 	
-    public void OnPathComplete (Path p) {
-		if (p.GetTotalLength() < 10000){
-			Debug.Log("Play scury music");
-		}
-		
-        Debug.Log ("Yey, we got a path back. Did it have an error? "+p.error);
+    public void OnPathComplete (Path p) {		
+        //Debug.Log ("Yey, we got a path back. Did it have an error? "+p.error);
         if (!p.error) {
             path = p;
             //Reset the waypoint counter

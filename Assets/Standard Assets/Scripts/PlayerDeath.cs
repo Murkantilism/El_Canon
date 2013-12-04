@@ -52,8 +52,10 @@ public class PlayerDeath : MonoBehaviour {
 	// If the player has too many stacks of either 
 	// impairment, end game
 	void EndGame(){
-		if (blindStacks > tooManyStacks || deafStacks > tooManyStacks){
+		if (blindStacks >= tooManyStacks || deafStacks >= tooManyStacks){
 			FadeOutToBlack();
+			// Invoke level restart after 8 seconds
+			Invoke("Restart", 8);
 		}
 	}
 	
@@ -62,6 +64,10 @@ public class PlayerDeath : MonoBehaviour {
 		// Dividing by 7 makes fade last 7 seconds
 		alphaFadeValue += Mathf.Clamp01(Time.deltaTime / 7);
 		fadeToBlackTexture.color = new Color(0, 0, 0, alphaFadeValue);
+	}
+	
+	private void Restart(){
+		Application.LoadLevel(0);
 	}
 	
 	// Fade AI agent away
