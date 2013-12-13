@@ -5,7 +5,6 @@ public class TriggerZone : MonoBehaviour {
 
 	public GUIText hint;
 	
-	float count = 1.0f;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,11 +14,18 @@ public class TriggerZone : MonoBehaviour {
 	{
 		if(col.gameObject.tag == "Player")
 		{
-			if (Inventory.light == 1)
+			if (Inventory.groundLight)
 			{
 				col.gameObject.SendMessage("Jump");
-				Destroy(GameObject.FindWithTag("LightSource"));
-			} else hint.SendMessage("ShowHint", "This flower looks like it can be jumped on to reach the next level, but it needs a light source to activate.");
+				Destroy(GameObject.FindWithTag("LightShine1"));
+			} else if (Inventory.plateauLight)
+			{				
+				col.gameObject.SendMessage("Jump");
+				Destroy(GameObject.FindWithTag("LightShine2"));
+			}
+				else hint.SendMessage("ShowHint",
+				"This flower looks like it can be jumped on to reach " +
+				"the next level, but it needs a light source to activate.");
 		}
 	}
 }

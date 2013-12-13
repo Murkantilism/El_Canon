@@ -3,18 +3,23 @@ using System.Collections;
 
 public class Inventory : MonoBehaviour {
 	
-	public static int light = 0;
+	public static bool groundLight = false;
+	public static bool plateauLight = false;
 	
 	// Use this for initialization
 	void Start () {
-		light = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log(groundLight);
 	}
 	
-	void Light(){
-		light++;
+	void LightGround(){
+		groundLight = true;
+	}
+	
+	void LightPlateau(){
+		plateauLight = true;	
 	}
 }

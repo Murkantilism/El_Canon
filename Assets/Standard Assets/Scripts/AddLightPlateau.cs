@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AddLight : MonoBehaviour {
+public class AddLightPlateau : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,7 @@ public class AddLight : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject.tag == "Player"){
-			col.gameObject.SendMessage("Light");
+			col.gameObject.SendMessage("LightPlateau");
 			transform.parent = col.gameObject.transform;
 			transform.localPosition = Vector3.forward * 3;
 		
